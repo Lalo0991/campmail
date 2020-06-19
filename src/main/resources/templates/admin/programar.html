@@ -8,13 +8,13 @@
 
     <title>D4 | PROGRAMAR</title>
 
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="font-awesome/css/font-awesome.css" rel="stylesheet">
-    <link href="css/animate.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
-    <link href="css/plugins/jasny/jasny-bootstrap.min.css" rel="stylesheet">
-    <link href="css/plugins/codemirror/codemirror.css" rel="stylesheet">
-    <link href="css/plugins/dualListbox/bootstrap-duallistbox.min.css" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{/admin/css/bootstrap.min.css}">   
+    <link rel="stylesheet" th:href="@{/admin/font-awesome/css/font-awesome.css}" >
+    <link rel="stylesheet" th:href="@{/admin/css/animate.css}" >
+    <link rel="stylesheet" th:href="@{/admin/css/style.css}" >
+    <link rel="stylesheet" th:href="@{/admin/css/plugins/jasny/jasny-bootstrap.min.css}" >
+    <link rel="stylesheet" th:href="@{/admin/css/plugins/codemirror/codemirror.css}" >
+    <link rel="stylesheet" th:href="@{/admin/css/plugins/dualListbox/bootstrap-duallistbox.min.css}" >
 
 </head>
 
@@ -259,20 +259,20 @@
     </div>
     </div>
 
+    
+    
     <!-- Mainly scripts -->
-    <script src="js/jquery-3.1.1.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
-    <script src="js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
-    <!-- Jasny -->
-    <script src="js/plugins/jasny/jasny-bootstrap.min.js"></script>
+	<script th:src="@{/admin/js/jquery-3.1.1.min.js}"></script>
+	<script th:src="@{/admin/js/bootstrap.min.js}"></script>
+	<script th:src="@{/admin/js/plugins/metisMenu/jquery.metisMenu.js}"></script>
+	<script
+		th:src="@{/admin/js/plugins/slimscroll/jquery.slimscroll.min.js}"></script>
+		 <!-- Jasny -->
+    <script th:src="@{/admin/js/plugins/jasny/jasny-bootstrap.min.js}"></script>
 
-    <!-- Dual Listbox -->
-    <script src="js/plugins/dualListbox/jquery.bootstrap-duallistbox.js"></script>
-
-    <!-- Custom and plugin javascript -->
-    <script src="js/inspinia.js"></script>
-    <script src="js/plugins/pace/pace.min.js"></script>
+	<!-- Custom and plugin javascript -->
+	<script th:src="@{/admin/js/inspinia.js}"></script>
+	<script th:src="@{/admin/js/plugins/pace/pace.min.js}"></script>
 
 
 </body>

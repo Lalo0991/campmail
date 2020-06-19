@@ -11,21 +11,20 @@ import org.springframework.web.servlet.ModelAndView;
 import mx.com.d4.services.IUtilities;
 
 @Controller
-@RequestMapping(path = "/admin")
-public class AdminController {
-	
+@RequestMapping(path = "/dashboard")
+public class DashboardController {
+
 	@Autowired
 	IUtilities utilitiesService;
 	
 	private final Log log = LogFactory.getLog(this.getClass());	
 	
-	@GetMapping(path = "/campanias")
-	public ModelAndView getCampaniasView() {
+	@GetMapping(path = "/get")
+	public ModelAndView getDashboardView() {
 		ModelAndView mav;
-		log.info("AdminController.getCampaniasView");		
-		mav = new ModelAndView("admin/campanias");
+		log.info("DashboardController.getDashboardView");		
+		mav = new ModelAndView("admin/dashboard");
 		return mav;
 	}
-
-
+	
 }
