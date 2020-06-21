@@ -6,15 +6,19 @@ import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
 @NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @Table(name = "client")
 public class Client implements Serializable {
@@ -22,12 +26,16 @@ public class Client implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@Column(name = "id_client")	
+	@Column(name = "id_client")
 	private String id;
-	
+			
+	@ManyToOne
+	@JoinColumn(name = "hdr_chargue", referencedColumnName = "id_chargue")
+	private ChargeHeader chargeHdr;
+
 	@NotNull
-	@Column(name = "status")	
-	private String status;	
+	@Column(name = "status")
+	private String status;
 
 	@NotNull
 	@Size(min = 3, max = 70)
@@ -55,6 +63,5 @@ public class Client implements Serializable {
 
 	@NotNull
 	@Column(name = "audith_time")
-	private Date audithTime;
-	
+	private Date audithTime;	
 }

@@ -1,9 +1,12 @@
 server:
  port: 8080
  servlet:
-  context-path: /campmail
+  context-path: /campmail  
   
-  spring:     
+ spring:  
+   devtools:
+    restart:
+      exclude: logs/**      
     datasource:
         platform: h2
         driverClassName: org.h2.Driver
@@ -14,4 +17,5 @@ server:
         path: /h2-console
     jpa:
       show-sql: true      
- 
+
+

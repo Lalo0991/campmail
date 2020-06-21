@@ -7,7 +7,7 @@ public class ClientMapper {
 
 	public static ClientDto toClientDTO(Client client) {
 
-		return new ClientDto().setId(client.getId()).setName(client.getName()).setContact(client.getContact()).setStatus(client.getStatus()).setMail(client.getMail()).setTag(client.getTag());
+		return new ClientDto().setId(client.getId()).setChargeHdr(client.getChargeHdr().getId()).setName(client.getName()).setContact(client.getContact()).setStatus(client.getStatus()).setMail(client.getMail()).setTag(client.getTag());
 	}
 	
 }

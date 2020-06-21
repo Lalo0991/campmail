@@ -5,7 +5,6 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 
 import mx.com.d4.dto.ParameterConfigDto;
-import mx.com.d4.models.ParameterConfig;
 
 @Service
 public interface IParameterConfigService {
