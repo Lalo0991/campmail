@@ -99,7 +99,7 @@
 			<div class="wrapper wrapper-content animated fadeInRight">
 
 
-				<div class="row">
+				<div class="row" >
 					<div class="col-lg-12">
 						<div class="ibox float-e-margins">
 							<div class="ibox-title">
@@ -125,60 +125,49 @@
 										</tr>
 									</thead>
 									<tbody>
-										<tr>
-											<td>20200527</td>
-											<td>Consulta</td>
-											<td><span class="label label-primary">Correcto</span></td>
-											<td>06/05/2020</td>
-											<td>Dashboard - Consulta correcta</td>
-											<td>campmail</td>
-											<td>06/05/2020</td>
-											<td>06/05/2020</td>
-										</tr>
-										<tr>
-											<td>20200527</td>
-											<td>Carga campaña</td>
-											<td><span class="label label-primary">Correcto</span></td>
-											<td>06/05/2020</td>
-											<td>Campañas - Carga correcta</td>
-											<td>campmail</td>
-											<td>06/05/2020</td>
-											<td>06/05/2020</td>
-										</tr>
-										<tr>
-											<td>20200527</td>
-											<td>Programación</td>
-											<td><span class="label label-danger">Error</span></td>
-											<td>06/05/2020</td>
-											<td>Programación - Programación incorrecta</td>
-											<td>campmail</td>
-											<td>06/05/2020</td>
-											<td>06/05/2020</td>
-										</tr>
-										<tr>
-											<td>20200527</td>
-											<td>Envío</td>
-											<td><span class="label label-danger">Error</span></td>
-											<td>06/05/2020</td>
-											<td>Envío - Envío incorrecto. Usuario: 3232434</td>
-											<td>campmail</td>
-											<td>06/05/2020</td>
-											<td>06/05/2020</td>
-										</tr>
-										<tr>
-											<td>20200527</td>
-											<td>Envío</td>
-											<td><span class="label label-primary">Correcto</span></td>
-											<td>06/05/2020</td>
-											<td>Envío - Envío correcto. Usuario: 8787874</td>
-											<td>campmail</td>
-											<td>06/05/2020</td>
-											<td>06/05/2020</td>
+										<tr th:each="log : ${logList}">
+											<td th:text="${{log.id}}">20200527</td>
+											<td th:text="${{log.operation}}">Consulta</td>
+											<td th:text="${{log.status}}"><span class="label label-primary">Correcto</span></td>
+											<td th:text="${{log.operationDate}}">06/05/2020</td>
+											<td th:text="${{log.description}}">Dashboard - Consulta correcta</td>
+											<td th:text="${{log.user}}">campmail</td>
+											<td th:text="${{log.creationDate}}">06/05/2020</td>
+											<td th:text="${{log.modificationDate}}">06/05/2020</td>
 										</tr>
 									</tbody>
 								</table>
-
 							</div>
+							<nav aria-label="Pagination" th:if="${logsPage.totalPages gt 0}">
+								    <ul class="pagination justify-content-center font-weight-medium">
+								        <li class="page-item" th:classappend="${logsPage.number eq 0} ? 'disabled'">
+								            <a class="page-link svg-icon glyphicon glyphicon-step-backward"
+								               th:classappend="${logsPage.number eq 0} ? 'disabled'"
+								               th:href="@{/bitacora/get/page/{id}(id=${logsPage.number lt 2 ? 1 : logsPage.number})}"
+								               aria-label="Previous"
+								               title="Previous Page" rel="tooltip">
+								            </a>
+								        </li>
+								        <li class="page-item" th:classappend="${i eq logsPage.number + 1} ? 'active'"
+								            th:each="i : ${#numbers.sequence( logsPage.number + 1, logsPage.totalPages > 10 + logsPage.number ? logsPage.number + 10 : logsPage.totalPages, 1)}">
+								            <a class="page-link" th:href="@{/bitacora/get/page/{id}(id=${i})}" th:text="${i}"
+								               th:title="${'Page '+ i}"
+								               rel="tooltip"></a>
+								        </li>
+								        <li class="page-item disabled" th:if="${logsPage.number + 10 < logsPage.totalPages}">
+								            <a class="page-link svg-icon glyphicon glyphicon-option-horizontal" href="#">
+								            </a>
+								        </li>
+								        <li class="page-item" th:classappend="${logsPage.number + 1 eq logsPage.totalPages} ? 'disabled'">
+								            <a class="page-link svg-icon glyphicon glyphicon-step-forward" 
+								               th:classappend="${logsPage.number + 1 eq logsPage.totalPages} ? 'disabled'"
+								               th:href="@{/bitacora/get/page/{id}(id=${logsPage.number + 2})}"
+								               aria-label="Next"
+								               title="Next Page" rel="tooltip">
+								            </a>
+								        </li>
+								    </ul>
+								</nav>
 						</div>
 					</div>
 				</div>

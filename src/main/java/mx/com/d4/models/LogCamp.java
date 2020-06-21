@@ -16,7 +16,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Entity
 @Table(name = "log")
-public class Log implements Serializable {
+public class LogCamp implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
 	
@@ -51,4 +51,20 @@ public class Log implements Serializable {
 	@NotNull
 	@Column(name = "modification_date")	
 	private Date modificationDate;
+
+	public LogCamp(Long id, @NotNull String operation, @NotNull String status, @NotNull Date operationDate,
+			@NotNull String description, @NotNull String user, @NotNull Date creationDate,
+			@NotNull Date modificationDate) {
+		super();
+		this.id = id;
+		this.operation = operation;
+		this.status = status;
+		this.operationDate = operationDate;
+		this.description = description;
+		this.user = user;
+		this.creationDate = creationDate;
+		this.modificationDate = modificationDate;
+	}
+	
+	
 }

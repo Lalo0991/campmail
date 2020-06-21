@@ -7,6 +7,7 @@ public enum EntityType {
     REQUEST,
     CHARGE,
     SHIPPING,
-    PARAMETER    
+    PARAMETER,
+    LOG
 }
 

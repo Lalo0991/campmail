@@ -7,7 +7,7 @@ import lombok.experimental.Accessors;
 
 @Data
 @Accessors(chain = true)
-public class LogDto {
+public class LogCampDto {
 	
 	private Long id;
 	private String operation;
