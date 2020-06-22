@@ -17,4 +17,6 @@ public interface ILogCampService {
 	boolean delete(Long id);
 
 	Page<LogCamp> getAll(Pageable pageable);
+	
+	Long findAllAccess();
 }

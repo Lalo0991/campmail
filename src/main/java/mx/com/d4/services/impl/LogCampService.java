@@ -72,12 +72,17 @@ public class LogCampService implements ILogCampService{
 			log = true;
 			return log;
 		}
-		throw exception(EntityType.PARAMETER, ExceptionType.ENTITY_NOT_FOUND, id.toString());
+		throw exception(EntityType.LOG, ExceptionType.ENTITY_NOT_FOUND, id.toString());
 	}
 
 	@Override
 	public Page<LogCamp> getAll(Pageable pageable) {
 		return logCampRepository.findAll(pageable);
+	}
+	
+	@Override
+	public Long findAllAccess() {
+		return logCampRepository.findAllAccess();
 	}
 	
 	/**
@@ -91,5 +96,7 @@ public class LogCampService implements ILogCampService{
 	private RuntimeException exception(EntityType entityType, ExceptionType exceptionType, String... args) {
 		return D4Exception.throwException(entityType, exceptionType, args);
 	}
+
+
 
 }

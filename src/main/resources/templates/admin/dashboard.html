@@ -113,8 +113,8 @@
 								<h5>Campañas enviadas</h5>
 							</div>
 							<div class="ibox-content">
-								<h1 class="no-margins">104</h1>
-								<div class="stat-percent font-bold text-success">100%</div>
+								<h1 class="no-margins" th:text="${dashboardInfo.sendCamps}">104</h1>
+								<div class="stat-percent font-bold text-success" th:text="${#numbers.formatPercent(dashboardInfo.sendCampsPercent, 3, 0)}">100%</div>
 								<small>Total</small>
 							</div>
 						</div>
@@ -127,8 +127,8 @@
 								<h5>Clientes contactados</h5>
 							</div>
 							<div class="ibox-content">
-								<h1 class="no-margins">10,532</h1>
-								<div class="stat-percent font-bold text-info">
+								<h1 class="no-margins" th:text="${dashboardInfo.clients}">10,532</h1>
+								<div class="stat-percent font-bold text-info" th:text="${#numbers.formatPercent(dashboardInfo.clientsPercent, 3, 0)}">
 									100% </i>
 								</div>
 								<small>Total</small>
@@ -143,8 +143,8 @@
 								<h5>Visitas</h5>
 							</div>
 							<div class="ibox-content">
-								<h1 class="no-margins">6,300</h1>
-								<div class="stat-percent font-bold text-navy">65%</div>
+								<h1 class="no-margins" th:text="${dashboardInfo.visits}">6,300</h1>
+								<div class="stat-percent font-bold text-navy" th:text="${#numbers.formatPercent(dashboardInfo.visitsPercent, 3, 0)}">65%</div>
 								<small>Nuevas visitas</small>
 							</div>
 						</div>
@@ -157,8 +157,8 @@
 								<h5>Errores</h5>
 							</div>
 							<div class="ibox-content">
-								<h1 class="no-margins">105</h1>
-								<div class="stat-percent font-bold text-danger">
+								<h1 class="no-margins" th:text="${dashboardInfo.errors}">105</h1>
+								<div class="stat-percent font-bold text-danger" th:text=" ${#numbers.formatPercent(dashboardInfo.errorsPercent, 3, 0)}">
 									100% </i>
 								</div>
 								<small>Total</small>
@@ -188,26 +188,26 @@
 									<div class="col-lg-3">
 										<ul class="stat-list">
 											<li>
-												<h2 class="no-margins">4</h2> <small>Campañas
+												<h2 class="no-margins" th:text="${dashboardInfo.sendCamps}">4</h2> <small>Campañas
 													enviadas</small>
-												<div class="stat-percent">18%</div>
+												<div class="stat-percent" th:text="${#numbers.formatPercent(dashboardInfo.sendCampsPercent, 3, 0)}">18%</div>
 												<div class="progress progress-mini">
-													<div style="width: 48%;" class="progress-bar"></div>
+													<div th:style="'width:'+ ${dashboardInfo.clientsPercent*100}+'%;'" class="progress-bar"></div>
 												</div>
 											</li>
 											<li>
-												<h2 class="no-margins ">1178</h2> <small>Clientes
+												<h2 class="no-margins " th:text="${dashboardInfo.clients}">1178</h2> <small>Clientes
 													contactados</small>
-												<div class="stat-percent">60%</div>
+												<div class="stat-percent" th:text="${#numbers.formatPercent(dashboardInfo.clientsPercent, 3, 0)}">60%</div>
 												<div class="progress progress-mini">
-													<div style="width: 60%;" class="progress-bar"></div>
+													<div th:style="'width:'+ ${dashboardInfo.clientsPercent*100}+'%;'" class="progress-bar"></div>
 												</div>
 											</li>
 											<li>
-												<h2 class="no-margins ">9,180</h2> <small>Visitas</small>
-												<div class="stat-percent">22%</div>
+												<h2 class="no-margins " th:text="${dashboardInfo.visits}">9,180</h2> <small>Visitas</small>
+												<div class="stat-percent" th:text="${#numbers.formatPercent(dashboardInfo.errorsPercent, 3, 0)}">22%</div>
 												<div class="progress progress-mini">
-													<div style="width: 22%;" class="progress-bar"></div>
+													<div th:style="'width:'+ ${dashboardInfo.errorsPercent*100}+'%;'" class="progress-bar"></div>
 												</div>
 											</li>
 										</ul>

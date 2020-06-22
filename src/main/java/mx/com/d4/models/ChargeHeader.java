@@ -44,6 +44,20 @@ public class ChargeHeader implements Serializable{
 
 	@NotNull
 	@Column(name = "audith_time")
-	private Date audithTime;	
+	private Date audithTime;
+
+	public ChargeHeader(String id, @NotNull Date day, String status, int readClient, int insertClient,
+			@NotNull String audithUsr, @NotNull Date audithTime) {
+		super();
+		this.id = id;
+		this.day = day;
+		this.status = status;
+		this.readClient = readClient;
+		this.insertClient = insertClient;
+		this.audithUsr = audithUsr;
+		this.audithTime = audithTime;
+	}	
+	
+	
 
 }
