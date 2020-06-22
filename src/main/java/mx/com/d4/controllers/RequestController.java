@@ -42,7 +42,8 @@ public class RequestController {
 	@GetMapping(path = "/new")
 	public ModelAndView getNewRequestView(@RequestParam("idClient") String idClient) {
 
-		RequestDto request = new RequestDto().setIdClient(idClient).setStatus(REQ_CONTACT.toString()).setReason(CONTACT.toString());
+		RequestDto request = new RequestDto().setIdClient(idClient).setStatus(REQ_CONTACT.toString())
+				.setReason(CONTACT.toString());
 		ModelAndView mav;
 
 		try {
@@ -64,9 +65,11 @@ public class RequestController {
 	}
 
 	@GetMapping(path = "/cancel")
-	public ModelAndView cancelRequestView(@RequestParam("idClient") String idClient, @ModelAttribute(name = "req") Request req) {
+	public ModelAndView cancelRequestView(@RequestParam("idClient") String idClient,
+			@ModelAttribute(name = "req") Request req) {
 
-		RequestDto request = new RequestDto().setIdClient(idClient).setStatus(REQ_CANCEL.toString()).setReason(CANCEL.toString());
+		RequestDto request = new RequestDto().setIdClient(idClient).setStatus(REQ_CANCEL.toString())
+				.setReason(CANCEL.toString());
 		ModelAndView mav;
 
 		try {
@@ -89,14 +92,14 @@ public class RequestController {
 	@PostMapping(path = "/cancelReason")
 	public String cancelReasonRequestView(@ModelAttribute(name = "req") Request req) {
 
-		log.info(String.format("RequestController.cancelReasonRequestView: %s ", req.toString()));		
+		log.info(String.format("RequestController.cancelReasonRequestView: %s ", req.toString()));
 		RequestDto request = new RequestDto();
 
 		try {
 			request = RequestMapper.toRequestDTO(req);
 			request.setStatus(REQ_CANCEL.toString());
 			log.info(String.format("RequestController.cancelReasonRequestView: %s  ", request.toString()));
-			requestService.update(request);		
+			requestService.update(request);
 
 		} catch (Exception e) {
 			e.printStackTrace();

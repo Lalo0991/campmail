@@ -1,12 +1,12 @@
 package mx.com.d4.exceptions;
 
+import java.text.MessageFormat;
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import mx.com.d4.config.PropertiesConfig;
-
-import java.text.MessageFormat;
-import java.util.Optional;
 
 @Component
 public class D4Exception {

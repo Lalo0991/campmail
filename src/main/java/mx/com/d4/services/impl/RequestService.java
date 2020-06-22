@@ -1,9 +1,5 @@
 package mx.com.d4.services.impl;
 
-import static mx.com.d4.models.RequestType.CONTACT;
-import static mx.com.d4.models.RequestType.REQ_CANCEL;
-import static mx.com.d4.models.RequestType.REQ_CONTACT;
-
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;

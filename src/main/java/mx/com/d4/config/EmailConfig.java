@@ -13,8 +13,6 @@ import org.springframework.mail.javamail.JavaMailSenderImpl;
 import com.google.common.primitives.Ints;
 
 import mx.com.d4.exceptions.D4Exception;
-import mx.com.d4.exceptions.EntityType;
-import mx.com.d4.exceptions.ExceptionType;
 import mx.com.d4.services.IParameterConfigService;
 
 @Configuration

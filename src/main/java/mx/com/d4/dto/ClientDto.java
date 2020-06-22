@@ -12,6 +12,7 @@ public class ClientDto  {
 	private String message;
 	
     private String id;
+    private String chargeHdr;
 	private String status;	
 	private String contact;
 	private String mail;
